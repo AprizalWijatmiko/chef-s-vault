@@ -1,0 +1,266 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  /* background-color: #D2E0FB; */
+}
+
+nav {
+  margin-bottom: 4rem;
+}
+
+.hero-title {
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-buttons button {
+    padding: 10px 15px;
+    font-size: 20px;
+  }
+}
+
+.container-fluid {
+  padding: 2rem;
+}
+
+.hero-section {
+  background: url('../img/bckrng.png') no-repeat center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-buttons button {
+  border: none;
+  border-radius: 20px;
+  padding: 15px 25px;
+  margin: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  outline: none;
+}
+
+.hero-buttons .write {
+  background-color: #FFECC8;
+  box-shadow: 8px 8px #E4C087;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-buttons .write:hover {
+  transform: translateY(2px);
+  box-shadow: 4px 4px #E4C087;
+}
+
+.hero-buttons .other {
+  text-transform: lowercase;
+  box-shadow: 8px 8px #BFBFBF;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-buttons .other:hover {
+  transform: translateY(2px);
+  box-shadow: 4px 4px #BFBFBF;
+}
+
+.button:focus {
+  outline: none; 
+}
+
+.navbar {
+  transition: transform 0.3s ease;
+}
+
+.navbar img {
+  width: 3.5rem;
+}
+
+.navbar a {
+  color: black;
+  font-size: 14px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  font: bold 1.5rem sans-serif;
+  text-transform: uppercase;
+  color: grey;
+}
+
+.navbar ul li {
+  padding: 0 .5em .25em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.navbar ul li:hover {
+  color: #fff;
+}
+
+.navbar ul li:before {
+  content: "";
+  position: absolute;
+  inset: calc(100% - 3px) 0 0 0; 
+  background: #B7E0FF;
+  scale: 0 1;
+  transition: .3s, translate 0s .3s;
+}
+
+.navbar ul:hover li:before {
+  scale: 1;
+}
+
+.navbar ul li:hover:before {
+  translate: 0;
+  transition: .3s;
+}
+
+.navbar ul:hover li:has(~ li:hover):before {
+  translate: 100% 0;
+  transition: .2s .2s,scale 0s .4s;
+}
+
+.navbar ul:hover li:hover ~ li:before {
+  translate: -100% 0;
+  transition: .2s .2s,scale 0s .4s;
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+img.head{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 7rem;
+  justify-content: center;
+}
+
+.container {
+  max-width: 100%;
+  padding: 10rem;
+}
+
+#recipe-list {
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  margin-left: 5.2rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background-color: #F4F4F4;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 60%; 
+    margin-left: 6.5rem;
+  }
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  padding: 20px 10px;
+  border-radius: 50px;
+}
+
+.card-body {
+  padding: 2rem 2rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: black;
+  margin-top: -2rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: black;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3em;
+  line-height: 1.5em;
+  word-wrap: break-word;
+}
+
+#pagination {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  #pagination {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+}
+
+#pagination button {
+  margin-top: 5rem;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+}
+
+#pagination button:disabled {
+  background-color: #cccccc; 
+  cursor: not-allowed;
+}
+
+#pagination button:not(:disabled):hover {
+  background-color: #007bff; 
+  color: white;
+  border: none;
+}
+
+#page-info {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 20px;
+  margin-top: 4rem;
+}

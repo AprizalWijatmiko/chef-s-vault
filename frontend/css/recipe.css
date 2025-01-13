@@ -1,0 +1,249 @@
+/* General Page Styling */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f8fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+ol.list-group {
+  list-style: decimal !important;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+
+.navbar {
+  transition: transform 0.3s ease;
+}
+
+.navbar img {
+  width: 3.5rem;
+}
+
+.navbar a {
+  color: black;
+  font-size: 14px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  font: bold 1.5rem sans-serif;
+  text-transform: uppercase;
+  color: grey;
+}
+
+.navbar ul li {
+  padding: 0 .5em .25em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.navbar ul li:hover {
+  color: #fff;
+}
+
+.navbar ul li:before {
+  content: "";
+  position: absolute;
+  inset: calc(100% - 3px) 0 0 0; /* 3px = the thickness */
+  background: #B7E0FF; /* the color */
+  scale: 0 1;
+  transition: .3s, translate 0s .3s;
+}
+
+.navbar ul:hover li:before {
+  scale: 1;
+}
+
+.navbar ul li:hover:before {
+  translate: 0;
+  transition: .3s;
+}
+
+.navbar ul:hover li:has(~ li:hover):before {
+  translate: 100% 0;
+  transition: .2s .2s,scale 0s .4s;
+}
+
+.navbar ul:hover li:hover ~ li:before {
+  translate: -100% 0;
+  transition: .2s .2s,scale 0s .4s;
+}
+
+/* Recipe Detail Card */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+}
+
+.card img {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 15px;
+}
+
+#recipe-story {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.servings, .time {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.servings h5, .time h5 {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Ingredient and Step Lists */
+#ingredient-list, #step-list {
+  padding: 0;
+  list-style: none;
+}
+
+#step-list {
+  padding: 0;
+  margin: 20px 0;
+  list-style: decimal inside; /* Menampilkan angka */
+}
+
+#ingredient-list li, #step-list li {
+  background-color: #f8f9fa;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+#ingredient-list li:before, #step-list li:before {
+  content: "\2022";
+  color: black;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Button Styles */
+button {
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+#delete-recipe-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+#delete-recipe-btn:hover {
+  background-color: #c82333;
+}
+
+#share-recipe-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+#share-recipe-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Back Button */
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.feedback-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.rating {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row-reverse; /* this is the magic */
+  justify-content: flex-end;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.rating label:hover,
+.rating label:hover ~ label { /* reason why the stars are in reverse order in the html */
+  color: orange;
+}
+
+.rating input:checked ~ label {
+  color: orange;
+}
+
+.comment {
+  margin-bottom: 20px;
+}
+
+.comment textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  margin-top: 4rem;
+}
+

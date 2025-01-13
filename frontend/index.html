@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Digital Recipe Book</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Static Hero Section -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <p class="hero-title">Join the Vault, Share Your Creations, and Taste <br>the Best Dish in the World All at Once</p>
+            <div class="hero-buttons">
+                <a href="add-recipe.html">
+                    <button class="write">Write your recipe</button>
+                </a>
+                <a href="#recipe-list-section">
+                    <button class="other">Other recipes</button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hidden Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-light hidden">
+        <img src="img/logo.png" class="navbar-brand">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="add-recipe.html">Add Recipe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#blank">My Recipes</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="recipe-list-section" class="container-fluid">
+            <img src="img/logo.png" class="head">
+            <p id="blank"></p>
+            <div id="recipe-list" class="row">
+                <!-- Recipe cards will be here -->
+            </div>
+    
+            <div id="pagination" class="d-flex justify-content-between align-items-center mt-4">
+                <button id="prev-btn" class="btn btn-secondary" disabled>Previous</button>
+                <span id="page-info" class="mx-2"></span>
+                <button id="next-btn" class="btn btn-secondary">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 My Recipe Book, Capstone Project.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

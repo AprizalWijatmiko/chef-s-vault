@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Recipe</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/add-recipe.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="img/logo.png" class="navbar-brand">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home Page</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Recipe Form Container -->
+    <div class="container">
+        <form class="recipe-form" id="recipe-form">
+            <!-- Image Upload Section -->
+            <div class="image-upload">
+                <label for="file-input">
+                    <img id="preview" style="display:none;" alt="Gambar Masakan"/>
+                    <div id="placeholder-text">
+                        <p>Add a final photo<br>of the dish</p>
+                    </div>
+                </label>
+                <input id="file-input" name="recipe_image" type="file" accept="image/*" style="display: none;" />
+            </div>
+            
+            <!-- Title and Story Section -->
+            <div class="form-group">
+                <label for="title">[Required] Title:</label>
+                <input type="text" id="title" name="recipe_title" class="form-control" placeholder="Favorite Chicken Soup" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <label for="description">[Required] Description:</label>
+                <textarea id="description" name="recipe_description" class="form-control" placeholder="Tell me about this food..." required></textarea>
+            </div>
+
+            <!-- Serving and Cooking Time -->
+            <div class="form-group-inline">
+                <div class="inline-item">
+                    <label for="servings">servings</label>
+                    <input type="number" id="servings" name="servings" class="form-control" placeholder="2 persons" required>
+                </div>
+                <div class="inline-item">
+                    <label for="cook_time">cook time</label>
+                    <input type="text" id="cook_time" name="cook_time" class="form-control" placeholder="1 hour 30 minutes" autocomplete="off" required>
+                </div>
+            </div>
+
+            <!-- Ingredients Section -->
+            <div class="form-group">
+                <label for="ingredients" class="font-weight-bold">Ingredients</label>
+                <div id="ingredient-list">
+                    <div class="form-group">
+                        <input type="text" class="form-control ingredient-input" name="ingredients[]" placeholder="e.g.,chicken thighs" autocomplete="off">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary mt-2" id="add-ingredient-btn">+ Ingredient</button>
+                <button type="button" class="btn btn-secondary mt-2" id="remove-ingredient-btn">- Ingredient</button>
+            </div>
+
+            <!-- Steps Section -->
+            <div class="form-group">
+                <label for="steps" class="font-weight-bold">Steps</label>
+                <div id="step-list">
+                    <div class="form-group">
+                        <textarea class="form-control step-input" name="steps[]" placeholder="Describe the first step" autocomplete="off"></textarea>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary mt-2" id="add-step-btn">+ Step</button>
+                <button type="button" class="btn btn-secondary mt-2" id="remove-step-btn">- Step</button>
+            </div>
+
+            <!-- Submit and Exit Buttons -->
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" id="save-and-close-btn">Save and Close</button>
+                <button type="button" class="btn btn-danger" id="exit-btn">Exit</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 My Recipe Book, Capstone Project.</p>
+    </footer>
+
+    <!-- Script Section -->
+    <script src="js/add-recipe.js"></script>
+</body>
+</html>
